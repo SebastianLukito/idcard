@@ -279,3 +279,11 @@ h3 {
         --scale: 1.5;  /* Mengatur skala kartu menjadi 1.5x pada orientasi landscape jika layar kecil */
     }
 }
+
+.ticket * {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none;         /* Non-prefixed version, saat ini didukung oleh Chrome, Opera dan Firefox */
+    pointer-events: none;      /* Prevents elements from being the target of mouse events */
+}
