@@ -262,14 +262,22 @@ h3 {
 
 /* Media queries untuk layar iPhone (width < 768px umumnya) */
 @media screen and (max-width: 768px) {
+    .background-container {
+        max-height: 800px;
+    }
+    
     .ticket {
         --scale: 1.5;  /* Mengatur skala kartu menjadi 1.5x */
-        margin-top: 20px;
+        margin-top: 20px;;
     }
 }
 
 /* Media queries untuk layar Android yang lebih besar atau yang dianggap "phablets" (width antara 768px dan 1024px) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .background-container {
+        max-height: 800px;
+    }
+    
     .ticket {
         --scale: 1.5;  /* Mengatur skala kartu menjadi 1.5x */
         margin-top: 20px;
@@ -278,6 +286,7 @@ h3 {
 
 /* Penyesuaian tambahan jika diperlukan untuk orientasi landscape */
 @media screen and (max-height: 500px) and (orientation: landscape) {
+    
     .ticket {
         --scale: 1.5;  /* Mengatur skala kartu menjadi 1.5x pada orientasi landscape jika layar kecil */
         margin-top: 20px;
