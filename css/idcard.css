@@ -173,6 +173,7 @@ a {
     z-index: 5;
     opacity: calc(var(--o) + 0.5);
     pointer-events: none;
+    border-radius: 30px;
 }
 
 .front {
