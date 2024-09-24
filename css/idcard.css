@@ -1,0 +1,260 @@
+/*
+== Date ==
+13th April 2024
+
+Inspiration: https://codepen.io/simeydotme/pen/QWJqRvB?editors=1100
+
+Supabase Ticket URL: https://supabase.com/special-announcement/tickets/gambhirsharma?lw=11&platinum=true
+
+*/
+html {
+    --zoom: 120;
+    --green: #37996b;
+    --neon: #3ecf8e;
+}
+:root {
+    --unit: 1vmin;
+    --available-screen-min: 665;
+    --px: calc(var(--zoom) * (var(--unit) / var(--available-screen-min)));
+    --bg: #060809;
+    --logopng: url(https://res.cloudinary.com/dpphcu4gm/image/upload/v1712993492/supabase-outline-logo_u83xos.png);
+    --ticket: url(https://assets.codepen.io/13471/ticket-shape.svg);
+    --ar: 10/30;
+    --gutter: 8%;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+*::after,
+*::before {
+    content: "";
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+head::before,
+head::after,
+body::before,
+body::after,
+html::before,
+html::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    filter: blur(0);
+}
+body {
+    all: unset;
+    background-color: var(--bg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    all: unset;
+}
+
+.marquee {
+    width: 100%;
+    background-color: rgb(10, 66, 101);
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    color: #e0e0e0;
+    text-align: center;
+    padding-block: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.marquee:hover {
+    background-color: #292929;
+    color: white;
+}
+
+.marquee:hover p {
+    animation-play-state: paused;
+}
+
+.marquee p {
+    display: inline-block;
+    animation: marquee 20s linear infinite alternate;
+}
+
+.marquee img.marquee-logo {
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding-inline: 1.5px;
+    padding-block: 1px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.background-container {
+    position: flex;
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/img/backgroundlogin.jpg') no-repeat center center/cover;
+}
+
+#app {
+    perspective: 1200px;
+    --o: 0;
+    --p: 100%;
+    --h: 50%;
+    --r: 0;
+    transform: translate3d(0, 0, 0.1px);
+    transform-style: preserve-3d;
+    transform-origin: center center; /* Tengah elemen sebagai pusat rotasi */
+}
+
+.ticket {
+    --scale: 1;
+    transform: translate3d(0, 0, 2px) scale(var(--scale)) rotateY(var(--r));
+    transform-style: preserve-3d;
+    pointer-events: auto;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+}
+
+.front {
+    grid-area: 1/1;
+    background: url('../assets/img/bgnt.png') no-repeat center center/cover;
+    border-radius: 15px;
+    display: grid;
+    backface-visibility: visible;
+    transform: translateZ(1px);
+    transform-style: preserve-3d;
+    height: calc(420 * var(--px));
+    align-content: center;
+    justify-content: center;
+}
+
+.back {
+    grid-area: 1/1;
+    background: url('../assets/img/bgnt.png') no-repeat center center/cover;
+    border-radius: 15px;
+    display: grid;
+    backface-visibility: visible;
+    transform: translateZ(1px);
+    transform-style: preserve-3d;
+    height: calc(420 * var(--px));
+    justify-items: center;
+    align-content: center;
+}
+
+
+.front::after,
+.back::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+    -70deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.5) 40.5%,
+    transparent
+    );
+    background-size: 200% 200%;
+    background-position: var(--p) var(--p);
+    z-index: 5;
+    opacity: calc(var(--o) + 0.5);
+    pointer-events: none;
+}
+
+.front {
+    transform: rotateY(180deg) translateZ(1px);
+}
+.back {
+    padding: calc(20 * var(--px));
+}
+
+
+.logo {
+    width: 50%;
+    place-self: center;
+    transform: translateY(-14%);
+}
+
+
+#app {
+    color: #000000;
+    /* font-family: "Roboto Mono", monospace; */
+    display: grid;
+    grid: 1fr/1fr;
+    place-content: center;
+    overflow: hidden;
+    padding: 50px;
+    z-index: 999;
+    height: 90%;
+}
+
+.ticket {
+    display: grid;
+    grid-area: 1/1;
+    width: calc(300 * var(--px));
+    height: calc(400 * var(--px));
+    aspect-ratio: var(--ar);
+    align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+    .ticket {
+    --scale: 0.75;
+    }
+}
+
+.data {
+    position: absolute;
+    top: calc(320 * var(--px));
+    margin: calc(20 * var(--px));
+    width: 100%;  /* Ensure the container spans the full width of its parent */
+    text-align: center;  /* Center-align text horizontally */
+}
+.name {
+    font-size: calc(25 * var(--px));
+}
+.nik {
+    font-size: calc(20 * var(--px));
+}
+h3 {
+    font-size: calc(15 * var(--px));
+}
+
+.photo{
+    width: calc(220 * var(--px));
+    height: calc(220 * var(--px));
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.box{
+    /* position: absolute;
+    top: calc(320 * var(--px));
+    margin: calc(20 * var(--px)); */
+    width: 80%;  /* Ensure the container spans the full width of its parent */
+    background-color: #e0e0e0;
+    border-radius: 2vw;
+    justify-self: center;
+    align-self: center;
+    padding: calc(15 * var(--px));
+}
+
+.box p {
+    font-size: calc(15 * var(--px));
+    margin: calc(5 * var(--px));
+    font-weight: bold;
+}
