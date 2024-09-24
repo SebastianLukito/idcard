@@ -264,6 +264,7 @@ h3 {
 @media screen and (max-width: 768px) {
     .ticket {
         --scale: 1.5;  /* Mengatur skala kartu menjadi 1.5x */
+        margin-top: 70px;
     }
 }
 
@@ -271,6 +272,7 @@ h3 {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .ticket {
         --scale: 1.5;  /* Mengatur skala kartu menjadi 1.5x */
+        margin-top: 70px;
     }
 }
 
@@ -278,6 +280,7 @@ h3 {
 @media screen and (max-height: 500px) and (orientation: landscape) {
     .ticket {
         --scale: 1.5;  /* Mengatur skala kartu menjadi 1.5x pada orientasi landscape jika layar kecil */
+        margin-top: 70px;
     }
 }
 
