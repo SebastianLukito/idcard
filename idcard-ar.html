@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card AR</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- A-Frame Scene -->
+    <a-scene embedded arjs>
+        <!-- QR Code Marker -->
+        <a-marker preset="custom" type="pattern" url="assets/marker/pattern-marker.patt">
+            <!-- 3D Object, Image, or Card to display when the marker is detected -->
+            <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="0.5" color="#F0F0F0">
+                <a-text value="Sebastianus Lukito \nMarketing Indogrosir" align="center" color="#000000"></a-text>
+            </a-plane>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
