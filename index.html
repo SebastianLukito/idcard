@@ -7,46 +7,40 @@
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
-    <title>IDCARD</title>
+    <title>Tim Desain Indogrosir</title>
     <link rel="icon" href="assets/img/iconjpg.jpg" type="image/jpg">
-    <link rel="stylesheet" href="css/idcard.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div class="background-container">
-        <div class="marquee" id="marquee">
-            <p>MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
-                <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
-            </p>
+    <div class="marquee" id="marquee">
+        <p>MARKETING INDOGROSIR - SUB DIVISI DESAIN GRAFIS
+            <img src="assets/img/igr.png" alt="Logo Indogrosir" class="marquee-logo">
+        </p>
+    </div>
+    <div class="mainContainer">
+        <!-- Manipulasi PDF button -->
+        <div class="buttonContainer">
+            <img src="assets/img/idcard.png" alt="Icon Manipulasi PDF" class="icon">
+            <a class="btn" id="PDF" href="bas.html"><b>ID Card</b></a>
         </div>
-            
-        <main id="app">
-            <section class="ticket">
-                <header class="front">
-                    <div class="box">
-                        <p>Makanan Favorit: Nasi + Sambel Padang</p>
-                        <p>Minuman Favorit: Air Putih</p>
-                        <p>Zodiak: Gemini</p>
-                        <p>Divisi: Marketing</p>
-                        <p>Sub-divisi: Desain Grafis</p>
-                        <p>Keahlian: Menghirup oksigen dan melepaskan karbon dioksida</p>
-                    </div>
-                </header>
-                <section class="back">
-                    <img class="photo" src="assets/img/foto.jpg"/>
-                    <div class="data">
-                        <p class="name">Sebastianus Lukito</p>
-                        <p class="nik">2015168495</p>
-                    </div>
-                    <aside class="divider">
-                        <div>
-                        </div>
-                    </aside>
-                </section>
-            </section>
-        </main>
+
+        <!-- Template dan Logo Button -->
+        <div class="buttonContainer">
+            <img src="assets/img/ar.png" alt="Icon Template dan Logo" class="icon">
+            <a class="btn" id="PDF" href="https://mywebar.com/p/Project_1_c0cncl5dvg"><b>AR Card</b></a>
+        </div>
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="js/idcard.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Marketing Indogrosir Sub Divisi Desain Grafis 2024</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('marquee').addEventListener('click', function() {
+            window.location.href = 'main.html';
+        });
+    </script>
 </body>
 </html>
